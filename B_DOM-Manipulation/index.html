@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM Manipulation</title>
+    <style>
+        img{
+            border: 1px solid black;
+            width: 100px;
+        }
+    </style>
 </head>
 <body>
 
@@ -11,6 +17,8 @@
 <h1 class="headingClasses">Hello Java Script</h1>
 <h2 class="headingClasses">What is a DOM.?</h2>
 <h3 class="headingClasses">Institute of Software Engineering</h3>
+
+<img src="https://www.ijse.lk/images/logos/ijse.png" alt="Image" width="200px">
 
 <input name="b" placeholder="Input Something" type="text">
 
@@ -44,6 +52,20 @@
 
     /*changing styles*/
     document.getElementsByClassName("headingClasses")[0].style.color="green";
+
+    /*how to get src(attr) values*/
+    /*getAttribute(param1)*/
+    /*setAttribute(param1,param2)*/
+
+    /*how to get a value from a text field*/
+    // document.querySelector("input").value="C001"; // setting values
+    // document.querySelector("input").value" // getting values
+
+    /*How to write an event for a button*/
+    /* document.querySelector("input").addEventListener('click',function(){
+         alert("How are you.?");
+     });*/
+
 
 
 
