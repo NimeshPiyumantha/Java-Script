@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <title>DOM Manipulation</title>
     <style>
-        img{
+        img {
             border: 1px solid black;
-            width: 100px;
+            width: 500px;
+            min-width: 500px;
+            min-height: 200px;
         }
     </style>
 </head>
@@ -18,9 +20,11 @@
 <h2 class="headingClasses">What is a DOM.?</h2>
 <h3 class="headingClasses">Institute of Software Engineering</h3>
 
-<img src="https://www.ijse.lk/images/logos/ijse.png" alt="Image" width="200px">
+<img alt="Image" src="">
 
 <input name="b" placeholder="Input Something" type="text">
+<input id="type" placeholder="text typing" type="text">
+<button>Test</button>
 
 <ul>
     <li>GDSE</li>
@@ -29,7 +33,6 @@
     <li>RWAD</li>
 </ul>
 
-<button>Test</button>
 
 <script>
     /* By using following methods we can select DOM elements to be changed */
@@ -48,10 +51,10 @@
     document.getElementsByClassName("headingClasses")[0].innerText;
 
     /*changing text*/
-    document.getElementsByClassName("headingClasses")[0].innerText="Text Chanaged";
+    document.getElementsByClassName("headingClasses")[0].innerText = "Text Chanaged";
 
     /*changing styles*/
-    document.getElementsByClassName("headingClasses")[0].style.color="green";
+    document.getElementsByClassName("headingClasses")[0].style.color = "green";
 
     /*how to get src(attr) values*/
     /*getAttribute(param1)*/
@@ -61,13 +64,29 @@
     // document.querySelector("input").value="C001"; // setting values
     // document.querySelector("input").value" // getting values
 
+
     /*How to write an event for a button*/
     /* document.querySelector("input").addEventListener('click',function(){
          alert("How are you.?");
      });*/
 
 
+    /* get the text field value and set is to the image source */
 
+    //01. select the button and set a click event
+    //02. then select the input field and then get the typed text
+    //03. select the image and then set the typed value for the src attribute
+
+    document.querySelector("button").addEventListener('click', function () {
+        // document.querySelector('input').value;// get the typed value
+        document.querySelector("img").setAttribute("src", document.querySelector('input').value);
+    });
+
+
+    // Display typed text on the h1 while typing
+    document.querySelector("#type").addEventListener("keyup", function () {
+        console.log("hello")
+    });
 
 
 </script>
