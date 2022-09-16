@@ -85,7 +85,13 @@
 
     // Display typed text on the h1 while typing
     document.querySelector("#type").addEventListener("keyup", function () {
-        console.log("hello")
+        // document.querySelector("#type").value; // return typed value in the text field
+
+        // console.log( document.querySelector("#type").value);
+
+        //select h1 and set the typed text of input filed
+        document.querySelector("h1").innerText=document.querySelector("#type").value;
+
     });
 
 
