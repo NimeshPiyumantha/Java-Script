@@ -6,5 +6,49 @@
 </head>
 <body>
 
+<h1>Hello Java Script</h1>
+<h1 id="h1ID" name="a">Hello Java Script</h1>
+<h1 class="headingClasses">Hello Java Script</h1>
+<h2 class="headingClasses">What is a DOM.?</h2>
+<h3 class="headingClasses">Institute of Software Engineering</h3>
+
+<input name="b" placeholder="Input Something" type="text">
+
+<ul>
+    <li>GDSE</li>
+    <li>CMJD</li>
+    <li>IJSE</li>
+    <li>RWAD</li>
+</ul>
+
+<button>Test</button>
+
+<script>
+    /* By using following methods we can select DOM elements to be changed */
+    /*
+      document.getElementById(""); // we can select unique element by Id (One element)
+      document.getElementsByClassName(""); // can select elements by using class selector (HTML Collection)
+      document.getElementsByName(""); // select elements by element name attribute value (Node Collection)
+      document.getElementsByTagName(""); // select elements by element name (HTML Collection)
+      document.querySelector("");*/ // select only one element from the machings, can use CSS selectors
+
+
+    /*remove elements*/
+    document.getElementById("h1ID").remove();
+
+    /*getting texts*/
+    document.getElementsByClassName("headingClasses")[0].innerText;
+
+    /*changing text*/
+    document.getElementsByClassName("headingClasses")[0].innerText="Text Chanaged";
+
+    /*changing styles*/
+    document.getElementsByClassName("headingClasses")[0].style.color="green";
+
+
+
+
+</script>
+
 </body>
 </html>
