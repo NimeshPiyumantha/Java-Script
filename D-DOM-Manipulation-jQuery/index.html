@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation</title>
+    <style>
+        img {
+            border: 1px solid black;
+            width: 500px;
+            min-width: 500px;
+            min-height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<img id="imgOne" alt="" src="https://blog.ijse.lk/web/blog/wp-content/uploads/2019/09/IMG_2086.jpg">
+<img id="imgTwo" alt=""
+     src="https://blog.ijse.lk/web/blog/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-24-at-12.29.48-PM-1-1-1024x574.jpeg">
+<img id="imgThree" alt="" src="https://blog.ijse.lk/web/blog/wp-content/uploads/2019/09/IMG_1664.jpg">
+<button id="btnOne">Image One</button>
+<button id="btnTwo">Image Two</button>
+<button id="btnThree">Image Three</button>
+
+<h1>Hello Java Script</h1>
+<h1 id="h1ID" name="a">Hello Java Script</h1>
+<h1 class="headingClasses">Hello Java Script</h1>
+<h2 class="headingClasses">What is a DOM.?</h2>
+<h3 class="headingClasses">Institute of Software Engineering</h3>
+
+<img alt="Image" id="mainImage" src="">
+
+<input name="b" placeholder="Input Something" type="text">
+<input id="type" placeholder="text typing" type="text">
+<button>Test</button>
+
+<ul>
+    <li>GDSE</li>
+    <li>CMJD</li>
+    <li>IJSE</li>
+    <li>RWAD</li>
+</ul>
+
+
+<script>
+    /* By using following methods we can select DOM elements to be changed */
+    /*
+      document.getElementById(""); // we can select unique element by Id (One element)
+      document.getElementsByClassName(""); // can select elements by using class selector (HTML Collection)
+      document.getElementsByName(""); // select elements by element name attribute value (Node Collection)
+      document.getElementsByTagName(""); // select elements by element name (HTML Collection)
+      document.querySelector("");*/ // select only one element from the machings, can use CSS selectors
+
+
+    /*remove elements*/
+    document.getElementById("h1ID").remove();
+
+    /*getting texts*/
+    document.getElementsByClassName("headingClasses")[0].innerText;
+
+    /*changing text*/
+    document.getElementsByClassName("headingClasses")[0].innerText = "Text Chanaged";
+
+    /*changing styles*/
+    document.getElementsByClassName("headingClasses")[0].style.color = "green";
+
+    /*how to get src(attr) values*/
+    /*getAttribute(param1)*/
+    /*setAttribute(param1,param2)*/
+
+    /*how to get a value from a text field*/
+    // document.querySelector("input").value="C001"; // setting values
+    // document.querySelector("input").value" // getting values
+
+
+    /*How to write an event for a button*/
+    /* document.querySelector("input").addEventListener('click',function(){
+         alert("How are you.?");
+     });*/
+
+
+    /* get the text field value and set is to the image source */
+    document.querySelector("#mainImage").setAttribute("src", "https://www.ijse.lk/images/logos/ijse.png");
+    //01. select the button and set a click event
+    //02. then select the input field and then get the typed text
+    //03. select the image and then set the typed value for the src attribute
+
+    document.querySelector("button").addEventListener('click', function () {
+        // document.querySelector('input').value;// get the typed value
+        document.querySelector("#mainImage").setAttribute("src", document.querySelector('input').value);
+    });
+
+
+    // Display typed text on the h1 while typing
+    document.querySelector("#type").addEventListener("keyup", function () {
+        // document.querySelector("#type").value; // return typed value in the text field
+
+        // console.log( document.querySelector("#type").value);
+
+        //select h1 and set the typed text of input filed
+        document.querySelector("h1").innerText = document.querySelector("#type").value;
+
+    });
+
+
+    /*Image hiding case*/
+    /* when button One is clicked Image One Should hide and rest of images should be displayed*/
+    /* when button Two is clicked Image Two Should hide and rest of images should be displayed*/
+    /* when button Three is clicked Image Three Should hide and rest of images should be displayed*/
+
+    //01 select three button
+    /*document.getElementById("btnOne");
+    document.getElementById("btnTwo");
+    document.getElementById("btnThree");*/
+
+    //02. Bind click events for those buttons
+    document.getElementById("btnOne").addEventListener("click",function(){
+        document.getElementById("imgOne").style.visibility='hidden';
+        document.getElementById("imgTwo").style.visibility='visible';
+        document.getElementById("imgThree").style.visibility='visible';
+    });
+
+    document.getElementById("btnTwo").addEventListener("click",function(){
+        document.getElementById("imgOne").style.visibility='visible';
+        document.getElementById("imgTwo").style.visibility='hidden';
+        document.getElementById("imgThree").style.visibility='visible';
+    });
+
+    document.getElementById("btnThree").addEventListener("click",function(){
+        document.getElementById("imgOne").style.visibility='visible';
+        document.getElementById("imgTwo").style.visibility='visible';
+        document.getElementById("imgThree").style.visibility='hidden';
+    });
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <meta content="width=device-width initial-scale=1" name="viewport">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+    <style>
+        ul > li {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+<!--header-->
+<header class="jumbotron bg-primary text-white p-3">
+    <h1 class="position-absolute" id="nav"></h1>
+    <ul class="list-group list-group-horizontal text-danger justify-content-end font-weight-bold">
+        <li class="list-group-item bg-danger text-white" id="lnkHome"><a class="text-white" href="index.html">Home</a></li>
+        <li class="list-group-item bg-white" id="lnkCustomer"><a href="pages/customer.html">Customer</a></li>
+        <li class="list-group-item bg-white" id="lnkItem"><a href="pages/item.html">Item</a></li>
+        <li class="list-group-item bg-white" id="lnkOrders"><a href="pages/purchase-order.html">Orders</a></li>
+    </ul>
+</header>
+
+<!--dashboard content-->
+<main class="container-fluid " id="dashboardContent">
+    <div class="jumbotron pt-md-5">
+        <div id="home-tiles">
+            <div class="row ">
+                <div class="col-lg-6 col-xl-3 mb-2">
+                    <div class="card">
+                        <div class="card-header bg-danger font-weight-bolder">Customers</div>
+                        <div class="card-body">
+                            <div class="dash-tile-icon"><i class="fas fa-users"></i></div>
+                            <div class="dash-tile-text text-right text-black-50"><h2>93</h2></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-3 mb-2">
+                    <div class="card">
+                        <div class="card-header bg-danger font-weight-bolder">Items</div>
+                        <div class="card-body">
+                            <div class="dash-tile-icon"><i class="fas fa-cubes"></i></div>
+                            <div class="dash-tile-text text-right text-black-50"><h2>101</h2></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-3 mb-2">
+                    <div class="card">
+                        <div class="card-header bg-danger font-weight-bolder">My Orders</div>
+                        <div class="card-body">
+                            <div class="dash-tile-icon"><i class="fas fa-shopping-cart"></i></div>
+                            <div class="dash-tile-text text-right text-black-50"><h2>999</h2></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-3 mb-2">
+                    <div class="card">
+                        <div class="card-header bg-danger font-weight-bolder">Settings</div>
+                        <div class="card-body">
+                            <div class="dash-tile-icon" style=""><i class="fas fa-cogs"></i></div>
+                            <div class="dash-tile-text text-right text-black-50">
+                                <h2>
+                                    <button class="btn btn-danger">new</button>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
