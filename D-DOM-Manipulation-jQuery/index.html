@@ -42,35 +42,34 @@
 </ul>
 
 
+<script src="assets/js/jquery-3.6.1.min.js"></script>
 <script>
-    /* By using following methods we can select DOM elements to be changed */
-    /*
-      document.getElementById(""); // we can select unique element by Id (One element)
-      document.getElementsByClassName(""); // can select elements by using class selector (HTML Collection)
-      document.getElementsByName(""); // select elements by element name attribute value (Node Collection)
-      document.getElementsByTagName(""); // select elements by element name (HTML Collection)
-      document.querySelector("");*/ // select only one element from the machings, can use CSS selectors
-
 
     /*remove elements*/
-    document.getElementById("h1ID").remove();
+    $("#h1ID").remove();
+    // document.getElementById("h1ID").remove();
 
     /*getting texts*/
-    document.getElementsByClassName("headingClasses")[0].innerText;
+    $(".headingClasses").eq(0).text();
+    // document.getElementsByClassName("headingClasses")[0].innerText;
 
     /*changing text*/
-    document.getElementsByClassName("headingClasses")[0].innerText = "Text Chanaged";
+    $(".headingClasses").eq(0).text("Text Changed");
+    // document.getElementsByClassName("headingClasses")[0].innerText = "Text Chnaged";
 
     /*changing styles*/
-    document.getElementsByClassName("headingClasses")[0].style.color = "green";
+    $(".headingClasses").eq(0).css('color','green');
+    // document.getElementsByClassName("headingClasses")[0].style.color = "green";
 
     /*how to get src(attr) values*/
     /*getAttribute(param1)*/
     /*setAttribute(param1,param2)*/
 
     /*how to get a value from a text field*/
+    $("input").val();
+    $("input").val("C001");
     // document.querySelector("input").value="C001"; // setting values
-    // document.querySelector("input").value" // getting values
+    // document.querySelector("input").value; //getting values
 
 
     /*How to write an event for a button*/
@@ -78,29 +77,45 @@
          alert("How are you.?");
      });*/
 
+    $("input").click(function(){
+        alert("How are you.?");
+    });
+
+
 
     /* get the text field value and set is to the image source */
-    document.querySelector("#mainImage").setAttribute("src", "https://www.ijse.lk/images/logos/ijse.png");
+    // document.querySelector("#mainImage").setAttribute("src", "https://www.ijse.lk/images/logos/ijse.png");
+    $('#mainImage').attr('src',"https://www.ijse.lk/images/logos/ijse.png");
     //01. select the button and set a click event
     //02. then select the input field and then get the typed text
     //03. select the image and then set the typed value for the src attribute
 
-    document.querySelector("button").addEventListener('click', function () {
-        // document.querySelector('input').value;// get the typed value
-        document.querySelector("#mainImage").setAttribute("src", document.querySelector('input').value);
+    /*   document.querySelector("button").addEventListener('click', function () {
+           // document.querySelector('input').value;// get the typed value
+           document.querySelector("#mainImage").setAttribute("src", document.querySelector('input').value);
+       });*/
+
+    $('button').click(function(){
+        $("#mainImage").attr('src',$('input').val());
     });
 
 
-    // Display typed text on the h1 while typing
-    document.querySelector("#type").addEventListener("keyup", function () {
-        // document.querySelector("#type").value; // return typed value in the text field
+    // // Display typed text on the h1 while typing
+    // document.querySelector("#type").addEventListener("keyup", function () {
+    //     // document.querySelector("#type").value; // return typed value in the text field
+    //
+    //     // console.log( document.querySelector("#type").value);
+    //
+    //     //select h1 and set the typed text of input filed
+    //     document.querySelector("h1").innerText = document.querySelector("#type").value;
+    //
+    // });
 
-        // console.log( document.querySelector("#type").value);
-
-        //select h1 and set the typed text of input filed
-        document.querySelector("h1").innerText = document.querySelector("#type").value;
-
+    $('#type').keyup(function (){
+        $("h1").text($('#type').val());
     });
+
+
 
 
     /*Image hiding case*/
@@ -114,23 +129,44 @@
     document.getElementById("btnThree");*/
 
     //02. Bind click events for those buttons
-    document.getElementById("btnOne").addEventListener("click",function(){
-        document.getElementById("imgOne").style.visibility='hidden';
-        document.getElementById("imgTwo").style.visibility='visible';
-        document.getElementById("imgThree").style.visibility='visible';
+    // document.getElementById("btnOne").addEventListener("click",function(){
+    //     document.getElementById("imgOne").style.visibility='hidden';
+    //     document.getElementById("imgTwo").style.visibility='visible';
+    //     document.getElementById("imgThree").style.visibility='visible';
+    // });
+
+    $("#btnOne").click(function(){
+        $("#imgOne").css('visibility','hidden');
+        $("#imgTwo").css('visibility','visible');
+        $("#imgThree").css('visibility','visible');
     });
 
-    document.getElementById("btnTwo").addEventListener("click",function(){
-        document.getElementById("imgOne").style.visibility='visible';
-        document.getElementById("imgTwo").style.visibility='hidden';
-        document.getElementById("imgThree").style.visibility='visible';
+
+    /*  document.getElementById("btnTwo").addEventListener("click",function(){
+          document.getElementById("imgOne").style.visibility='visible';
+          document.getElementById("imgTwo").style.visibility='hidden';
+          document.getElementById("imgThree").style.visibility='visible';
+      });*/
+
+    $("#btnTwo").click(function(){
+        $("#imgOne").css('visibility','visible');
+        $("#imgTwo").css('visibility','hidden');
+        $("#imgThree").css('visibility','visible');
     });
 
-    document.getElementById("btnThree").addEventListener("click",function(){
-        document.getElementById("imgOne").style.visibility='visible';
-        document.getElementById("imgTwo").style.visibility='visible';
-        document.getElementById("imgThree").style.visibility='hidden';
+
+    // document.getElementById("btnThree").addEventListener("click",function(){
+    //     document.getElementById("imgOne").style.visibility='visible';
+    //     document.getElementById("imgTwo").style.visibility='visible';
+    //     document.getElementById("imgThree").style.visibility='hidden';
+    // });
+
+    $("#btnThree").click(function(){
+        $("#imgOne").css('visibility','visible');
+        $("#imgTwo").css('visibility','visible');
+        $("#imgThree").css('visibility','hidden');
     });
+
 
 
 
