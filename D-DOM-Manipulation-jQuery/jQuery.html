@@ -14,8 +14,9 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda blanditiis eligendi exercitationem expedita,
     harum id laboriosam laborum laudantium magni natus, nulla optio pariatur perferendis placeat quia quis vel
     voluptatum. Beatae.</p>
-<input placeholder="Input Something" type="text">
-<button>Test</button>
+<input placeholder="Input Something" id="txtInput" type="text">
+<button id="btnOne">UP</button>
+<button id="btnTwo">Down</button>
 <ul>
     <li>IJSE</li>
     <li class="list">GDSE</li>
@@ -100,9 +101,34 @@
 
 
     //how to write down an event using jQuery
-    $('button').click(function(){
-        alert("hello");
+    // $('button').click(function(){
+    //     alert("hello");
+    // });
+
+
+    // How to add elements to dom
+    //append
+    //prepend
+
+    // add to the bottom of selected element
+    $("ul").append("<li>A</li>");
+    $("ul").append("<li>B</li>");
+
+    //add to the top of the selected element
+    $("ul").prepend("<li>C</li>");
+    $("ul").prepend("<li>D</li>");
+
+
+    // first select the button and add a click event
+    $("#btnOne").click(function(){
+        $('ul').prepend('<li>'+$("#txtInput").val()+'</li>');
     });
+
+    $("#btnTwo").click(function(){
+        $('ul').append('<li>'+$("#txtInput").val()+'</li>');
+    });
+
+
 
 
 </script>
