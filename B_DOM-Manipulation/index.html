@@ -115,21 +115,21 @@
 
     //02. Bind click events for those buttons
     document.getElementById("btnOne").addEventListener("click",function(){
-        document.getElementById("imgOne").style.display='none';
-        document.getElementById("imgTwo").style.display='inline-block';
-        document.getElementById("imgThree").style.display='inline-block';
+        document.getElementById("imgOne").style.visibility='hidden';
+        document.getElementById("imgTwo").style.visibility='visible';
+        document.getElementById("imgThree").style.visibility='visible';
     });
 
     document.getElementById("btnTwo").addEventListener("click",function(){
-        document.getElementById("imgOne").style.display='inline-block';
-        document.getElementById("imgTwo").style.display='none';
-        document.getElementById("imgThree").style.display='inline-block';
+        document.getElementById("imgOne").style.visibility='visible';
+        document.getElementById("imgTwo").style.visibility='hidden';
+        document.getElementById("imgThree").style.visibility='visible';
     });
 
     document.getElementById("btnThree").addEventListener("click",function(){
-        document.getElementById("imgOne").style.display='inline-block';
-        document.getElementById("imgTwo").style.display='inline-block';
-        document.getElementById("imgThree").style.display='none';
+        document.getElementById("imgOne").style.visibility='visible';
+        document.getElementById("imgTwo").style.visibility='visible';
+        document.getElementById("imgThree").style.visibility='hidden';
     });
 
 
