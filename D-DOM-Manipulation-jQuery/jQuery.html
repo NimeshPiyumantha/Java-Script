@@ -23,6 +23,7 @@
     <li class="list">RMAD</li>
 </ul>
 <h2>Hello there</h2>
+<img src="" alt="IJSE" width="500px">
 
 <script src="assets/js/jquery-3.6.1.min.js"></script> <!--import jQuery library-->
 <script>
@@ -68,13 +69,40 @@
     //how to remove an element from dom using jQuery
     // $('h1').remove(); // this is how to do it using jQuery
 
+
     //how to get the text of an element
     $("#firstH1").text(); // return the text of selected h1
+
 
     //how to set the text of an element
     $("#firstH1").text("Institute of Java and Software Engineering");// this is how to change a text in an element
 
 
+
+    //how to change the styles
+    $("li").css('color', 'red'); // first para (css property) // second para (css value)
+    $("li").css('font-size', '40px'); // first para (css property) // second para (css value)
+
+
+    //how to get values from text fields
+    $('input').val(); // returns the text field input value
+
+    //how to set values to a text field
+    $('input').val("IJSE"); // can set value to the input field
+
+
+
+    //how to change attributes in jQuery
+    $('img').attr('src','https://www.ijse.lk/images/logos/ijse.png'); // change attribute value
+
+    $('img').attr('src'); // get attribute value
+
+
+
+    //how to write down an event using jQuery
+    $('button').click(function(){
+        alert("hello");
+    });
 
 
 </script>
