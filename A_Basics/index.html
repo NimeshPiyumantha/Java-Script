@@ -131,7 +131,6 @@
     // Not supporting for hoisting
 
 
-
     // Rules for Identifiers (Variable Names)
 
     // are they case-sensitive.?
@@ -252,7 +251,6 @@
     // console.log(myName.substring(1,3));
 
 
-
     // Numbers
     //decimal
     //binary
@@ -279,7 +277,6 @@
     // In js all the numbers are referred by one data type which is called as Number
 
 
-
     // BigInt
     //we can use this to assign values larger than Number.MAX_SAFE_INTEGER (9007199254740991) value
     // let bigIntNumber=100n;
@@ -294,26 +291,46 @@
     // console.log(typeof boolVariable);
 
 
-
     //Undefined // because of JS is loosely typed language, when there are no value for a variable
     //it automatically refers the type of undefined
-    var myVarible=10;
-    var noValue;
-    console.log(typeof noValue); // because no value is defined
+    // var myVarible=10;
+    // var noValue;
+    // console.log(typeof noValue); // because no value is defined
 
 
     // Null (to represent that there are no values)
     //So what is null.?
-    var nullVariable=null;// this a is initialized, but no values, when we want to initialize a variable with no value
+    // var nullVariable=null;// this a is initialized, but no values, when we want to initialize a variable with no value
     // we can use null
-    console.log(nullVariable);
-    console.log(typeof nullVariable); //object (null refers the object type in js)
+    // console.log(nullVariable);
+    // console.log(typeof nullVariable); //object (null refers the object type in js)
 
 
+    //How to create a named value container(Object) in JS
+    // Literal Base Object
+    // Function Base
 
+    // Literal Base (ROW version of creating an object)
+    //properties // methods
 
+    var customer = {
+        "id": "C001",  //key : value
+        "name": "Dasun",
+        "address": "Galle",
+        "salary": 19999,
+        "myStatus": true
+    }
+    //Object is a named value container
 
+    //how to access values in an object
 
+    // dot notation
+    customer.id; // C001
+    console.log(customer.id);
+
+    //bracket notation
+    customer['address'];
+    console.log(customer['address']);
 
 </script>
 </body>
