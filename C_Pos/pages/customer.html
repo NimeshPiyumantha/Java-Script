@@ -93,12 +93,17 @@
         let customerAddress = $("#txtCustomerAddress").val();
         let customerSalary = $("#txtCustomerSalary").val();
 
-        alert(customerID+" "+ customerName+" "+customerAddress+" "+customerSalary);
+        alert(customerID + " " + customerName + " " + customerAddress + " " + customerSalary);
 
         //Put all of these values inside a named container
         // customer
-
-
+        var customer = {
+            "id": customerID,  //key : value
+            "name": customerName,
+            "address": customerAddress,
+            "salary": customerSalary,
+        }
+        console.log(customer);
 
     });
 
