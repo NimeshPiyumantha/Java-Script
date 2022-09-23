@@ -20,7 +20,8 @@
     <h1 class="position-absolute" id="nav"></h1>
     <ul class="list-group list-group-horizontal text-danger justify-content-end font-weight-bold">
         <li class="list-group-item bg-white" id="lnkHome"><a href="../index.html">Home</a></li>
-        <li class="list-group-item bg-danger text-white" id="lnkCustomer"><a class="text-white" href="customer.html">Customer</a></li>
+        <li class="list-group-item bg-danger text-white" id="lnkCustomer"><a class="text-white" href="customer.html">Customer</a>
+        </li>
         <li class="list-group-item bg-white" id="lnkItem"><a href="item.html">Item</a></li>
         <li class="list-group-item bg-white" id="lnkOrders"><a href="purchase-order.html">Orders</a></li>
     </ul>
@@ -48,8 +49,8 @@
                 <span class="control-error" id="lblcusaddress"></span>
             </div>
             <div class="form-group">
-                <label for="txtCustomerSalry">Customer Salary</label>
-                <input class="form-control" id="txtCustomerSalry" type="text">
+                <label for="txtCustomerSalary">Customer Salary</label>
+                <input class="form-control" id="txtCustomerSalary" type="text">
                 <span class="control-error" id="lblcussalary"></span>
             </div>
             <div class="btn-group">
@@ -77,15 +78,26 @@
             </table>
         </div>
     </section>
-
 </main>
 
-<script rel="script" src="../assets/js/jquery-3.6.1.min.js"></script>
-<script>
 
+<script src="../assets/js/jquery-3.6.1.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script>
+    //select the save button and bind a click event for it
     $("#btnCustomer").click(function () {
-       alert("Hello")
+
+        //select all the four text fields and then get their typed values
+        $("#txtCustomerID").val();
+        $("#txtCustomerName").val();
+        $("#txtCustomerAddress").val();
+        $("#txtCustomerSalary").val();
+
+        // //print values with an alert
+        // alert($("#txtCustomerID").val());
+        // alert($("#txtCustomerName").val());
     });
+
 
 </script>
 </body>
