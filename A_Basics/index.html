@@ -261,20 +261,20 @@
     //floating point
 
     //decimal
-    let numberOne=10;
-    console.log(typeof numberOne);
-
-    let numberTwo=30.78;
-    console.log(typeof numberTwo);
-
-    let numberBinary=0b101;
-    console.log(typeof numberBinary)
-
-    let octalNumber= 0o17;
-    console.log(typeof octalNumber);
-
-    let hexNumber= 0xA;
-    console.log(typeof hexNumber)
+    // let numberOne=10;
+    // console.log(typeof numberOne);
+    //
+    // let numberTwo=30.78;
+    // console.log(typeof numberTwo);
+    //
+    // let numberBinary=0b101;
+    // console.log(typeof numberBinary)
+    //
+    // let octalNumber= 0o17;
+    // console.log(typeof octalNumber);
+    //
+    // let hexNumber= 0xA;
+    // console.log(typeof hexNumber)
 
     // In js all the numbers are referred by one data type which is called as Number
 
@@ -282,8 +282,34 @@
 
     // BigInt
     //we can use this to assign values larger than Number.MAX_SAFE_INTEGER (9007199254740991) value
-    let bigIntNumber=100n;
-    console.log(typeof bigIntNumber);
+    // let bigIntNumber=100n;
+    // console.log(typeof bigIntNumber);
+
+
+    //Boolean
+    // true , false
+    // var booleanVariable=true;
+    // var boolVariable=false;
+    // console.log(typeof booleanVariable);
+    // console.log(typeof boolVariable);
+
+
+
+    //Undefined // because of JS is loosely typed language, when there are no value for a variable
+    //it automatically refers the type of undefined
+    var myVarible=10;
+    var noValue;
+    console.log(typeof noValue); // because no value is defined
+
+
+    // Null (to represent that there are no values)
+    //So what is null.?
+    var nullVariable=null;// this a is initialized, but no values, when we want to initialize a variable with no value
+    // we can use null
+    console.log(nullVariable);
+    console.log(typeof nullVariable); //object (null refers the object type in js)
+
+
 
 
 
