@@ -50,37 +50,82 @@
 
     /* In JavaScript */
     /*How to make a variable in JS*/
-    var name="Hello JS";
-    typeof name; //string
-    alert(name);
+    // var name="Hello JS";
+    // typeof name; //string
+    // alert(name);
 
     /* Why JS is known as Loosely typed language*/
-    var age=10; // in here no data type defined before creating the variable
+    // var age=10; // in here no data type defined before creating the variable
     // So we can be assigned anything that we want for the age.
     // Because, JS is loosely typed language
 
 
     // So why JS in Dynamic Typing
-    var mySalary= 100000.99;
-    typeof  mySalary;//number // after assign value for the first time, I will get the type of that value
+    // var mySalary= 100000.99;
+    // typeof  mySalary;//number // after assign value for the first time, I will get the type of that value
 
     // then after that can we change it.?
-    mySalary=true; // assigned another type of value to the previously created variable
-    typeof  mySalary; //boolean (now it is changed to boolean)
+    // mySalary=true; // assigned another type of value to the previously created variable
+    // typeof  mySalary; //boolean (now it is changed to boolean)
 
     //Let's change it again
-    mySalary="No Salary";
-    typeof  mySalary;//String (now it has changed to string) // always dynamically changing its data type
+    // mySalary="No Salary";
+    // typeof  mySalary;//String (now it has changed to string) // always dynamically changing its data type
 
     // This is why js is known as dynamic scripting language
 
 
+    /* So, what the troubles we have to face by creating variables using var declaration type */
+    // var mySate=false;
+    // var mySate=true; // can duplicate the identifiers
+
+    // Does not satisfy the scope
+    // var myTp=1199;
+    {
+        // console.log(myTp);// this is legal
+        // var myAge=100;
+    }
+    // console.log(myAge);// this should be not accessible, but It is accessible
 
 
+    // So what are the special features in var.?
+    // Hoisting - you can use a variable which is going to be later initialized
+    // console.log(x);//undefined
+    // var x = 100;
+    // console.log(x);//100
 
 
+    /*What are the other ways that we have to create variables in JS*/
+    let myName='Kasun'; // variables with let declaration
+    console.log(myName);
+
+    // So, What's new about let.?
+    //let myName="Nimal"; // Error //Identifier 'myName' has already been declared
 
 
+    // So, what about scope problem
+    {
+        console.log(myName);
+        let myAge=10;
+    }
+    // console.log(myAge); // error // now this is not accessible
+
+
+    let age=10;
+    console.log(typeof  age);
+
+    age=true;
+    console.log(typeof  age);
+
+
+    // what about hoisting?
+    // console.log(x);// not working
+    let x=100;
+
+    // In let declaration we cannot duplicate identifiers
+    // Scope is satisfied
+    // Dynamic Typing Support
+    // Not supporting for hoisting
 
 
 </script>
