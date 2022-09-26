@@ -57,7 +57,7 @@
                 <button class="btn btn-primary" id="btnCustomer">Save Customer</button>
                 <button class="btn btn-danger" id="btnCusDelete">Remove</button>
                 <button class="btn btn-warning" id="btnUpdate">Update</button>
-                <button class="btn btn-success">Get All</button>
+                <button class="btn btn-success" id="btnGetAll">Get All</button>
                 <button class="btn btn-danger" id="btn-clear1">Clear All</button>
             </div>
 
@@ -114,6 +114,17 @@
         console.log(customers);
 
     });
+
+
+    $("#btnGetAll").click(function (){
+
+        for(var customer of customers){
+            console.log(customer.id);
+        }
+
+    });
+
+
 
 
 </script>
