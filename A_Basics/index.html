@@ -381,8 +381,8 @@
     //pop(); // remove the last indexed value of the array
     //shift(); // remove the first indexed value of the array
     //unshift();// add values to the first index of the array
-    //slice();
-    //splice();
+    //slice(); // can copy array values to another array by giving index ranges
+    //splice(); // can remove array values from anywhere we want
     //reverse();
     //sort();
     //length
@@ -413,6 +413,35 @@
     customers.unshift("A");
     customers.unshift("Z");
     console.log(customers);
+
+
+    //Slice (Can copy a selected range of array to a new array)
+    var newArray=customers.slice(0,4); //start and end indexes
+    console.log(newArray);
+
+    // Splice (can remove any selected indexed value from an array)
+    //let's remove B
+    //index of B is 2
+    console.log("=================")
+    console.log(customers);
+    customers.splice(2,1);//B is removed // index number , delete count
+    console.log(customers);
+
+    //reverse (Can reverse the values of an array)
+    console.log(customers.reverse());
+
+    //sort (can sort out values in an array)
+    console.log(customers.sort());
+
+    // length (can get the values count of an array)
+    console.log(customers.length);
+
+    // indexOf
+    console.log(customers);
+    console.log(customers.indexOf("A")); // return the index number of the A if A is available in the array
+    //otherwise return -1
+
+
 
 
 
