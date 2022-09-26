@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traversing With JS</title>
+</head>
+<body>
+<h1>Traversing With JS</h1>
+<ul>
+    <li>A</li>
+    <li>B</li>
+    <li>C</li>
+</ul>
+
+<section>
+    <section>
+        <div>
+
+        </div>
+        <div>
+            <h1 id="d">Hello there How you.!</h1>
+        </div>
+    </section>
+</section>
+
+
+<script src="assets/js/jquery-3.6.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.33/dist/sweetalert2.all.min.js"></script>
+<script>
+
+    $("#d").click(function (){
+        Swal.fire(
+            'Hi',
+            'That thing is still around?',
+            'question'
+        )
+    });
+</script>
+</body>
+</html>
