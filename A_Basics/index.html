@@ -346,7 +346,7 @@
 
 
 
-    // Arrays
+    //Arrays
     //Arrays also can create in two ways
     //-Literal Base Arrays
     //-Function Base Arrays
@@ -372,11 +372,11 @@
 
 
 
-    var customers=[];
+    // var customers=[];
 
     // add customer name
 
-    // Array Related Methods, we can use these methods to manipulate array values
+    //Array Related Methods, we can use these methods to manipulate array values
     //push(); // add values to the end of the array
     //pop(); // remove the last indexed value of the array
     //shift(); // remove the first indexed value of the array
@@ -389,62 +389,111 @@
     //indexOf(); // can get the index number of a value by giving the value
 
     // Push (add values to the last index)
-    customers.push("A");
-    customers.push("B");
-    customers.push("C");
-    customers.push("D");
-    customers.push("E");
-    customers.push("F");
-    console.log(customers);
+    // customers.push("A");
+    // customers.push("B");
+    // customers.push("C");
+    // customers.push("D");
+    // customers.push("E");
+    // customers.push("F");
+    // console.log(customers);
 
 
     //Pop (Remove the last indexed value of the arrays)
-    customers.pop(); //F
-    customers.pop(); //E
-    console.log(customers);
+    // customers.pop(); //F
+    // customers.pop(); //E
+    // console.log(customers);
 
     // Shift (Remove the first indexed value of an array)
-    customers.shift();//A
-    customers.shift();//B
-    console.log(customers);
+    // customers.shift();//A
+    // customers.shift();//B
+    // console.log(customers);
 
     //Unshift (Add values to the first index of the array)
-    customers.unshift("B");
-    customers.unshift("A");
-    customers.unshift("Z");
-    console.log(customers);
+    // customers.unshift("B");
+    // customers.unshift("A");
+    // customers.unshift("Z");
+    // console.log(customers);
 
 
     //Slice (Can copy a selected range of array to a new array)
-    var newArray=customers.slice(0,4); //start and end indexes
-    console.log(newArray);
+    // var newArray=customers.slice(0,4); //start and end indexes
+    // console.log(newArray);
 
     // Splice (can remove any selected indexed value from an array)
     //let's remove B
     //index of B is 2
-    console.log("=================")
-    console.log(customers);
-    customers.splice(2,1);//B is removed // index number , delete count
-    console.log(customers);
+    // console.log("=================")
+    // console.log(customers);
+    // customers.splice(2,1);//B is removed // index number , delete count
+    // console.log(customers);
 
     //reverse (Can reverse the values of an array)
-    console.log(customers.reverse());
+    // console.log(customers.reverse());
 
     //sort (can sort out values in an array)
-    console.log(customers.sort());
+    // console.log(customers.sort());
 
     // length (can get the values count of an array)
-    console.log(customers.length);
+    // console.log(customers.length);
 
     // indexOf
-    console.log(customers);
-    console.log(customers.indexOf("A")); // return the index number of the A if A is available in the array
+    // console.log(customers);
+    // console.log(customers.indexOf("A")); // return the index number of the A if A is available in the array
     //otherwise return -1
 
 
 
 
+    // Loops and Iteration in JS
 
+    //For Loop
+    //While
+    //Do while
+    //for in (index number)
+    //for of (values)
+
+
+    //for loop
+    // for(var i=0;i<10;i++){
+    //     console.log(i);
+    // }
+
+
+    // While loop
+    // var i=0;
+    // while(i<10){
+    //     i++;
+    //     console.log(i);
+    // }
+
+
+    //Do While
+    // var i=0;
+    // do{
+    //     console.log(i);
+    //     i++;
+    // }while (i<10);
+
+
+    // Let's get the values of an array using a for loop
+    var arrayOfAges=[10,20,55,65,34,90,100,35];
+
+    // for(var i=0;i<arrayOfAges.length;i++){
+    //     console.log(arrayOfAges[i]);
+    // }
+
+    //for of -> refer array values to the variable directly
+    for(var i of arrayOfAges){
+        console.log(i);
+    }
+
+    console.log("+++++++++++++++");
+
+
+    // for in -> return index number of all the values
+    for(var i in arrayOfAges){
+        console.log(i,arrayOfAges[i]);
+    }
 
 
 
