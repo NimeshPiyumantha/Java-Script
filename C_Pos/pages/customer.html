@@ -86,7 +86,7 @@
 <script>
     //select the save button and bind a click event for it
 
-    var customers=[]; // global scope
+    var customers=[]; // global scope (Store all the customer records)
 
     $("#btnCustomer").click(function () {
         //local scope // function scope
@@ -109,6 +109,7 @@
             salary: customerSalary
         }
 
+        //add the customer object to the array
         customers.push(customerObject);
 
         console.log(customers);
@@ -118,11 +119,14 @@
 
     $("#btnGetAll").click(function (){
 
+        // get all customer records from the array
         for(var customer of customers){
-            console.log(customer);
+            console.log(customer);// customer object
 
+            // add those data to the table row
             var row= "<tr><td>"+customer.id+"</td><td>"+customer.name+"</td><td>"+customer.address+"</td><td>"+customer.salary+"</td></tr>";
 
+            //then add it to the table body of customer table
             $("#tblCustomer").append(row);
         }
 
