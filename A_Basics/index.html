@@ -10,7 +10,7 @@
 
 </head>
 <body>
-
+<h1>Hello JS, This is for learning JS Basics..!</h1>
 
 <!--First method-->
 <!--here we have js. and you can interpret them-->
@@ -251,10 +251,10 @@
     // console.log(myName.substring(1,3));
 
 
-    // String Literals
-    var myName="Faruk";
-    var myString=`Hello there.. How are you ${myName}`;
-    console.log(myString);
+    // // String Literals
+    // var myName="Faruk";
+    // var myString=`Hello there.. How are you ${myName}`;
+    // console.log(myString);
 
 
     // Numbers
@@ -340,13 +340,31 @@
     // console.log(customer['address']);
 
 
+    // Functions
+    // =============
 
-    // Function - just a method
     // function getMyName(){
     //     alert("My Name IS ABCD");
     // }
+
     // getMyName();
 
+
+    function getMyData() { // this is how to create a js function
+        console.log("My Name IS IJSE")
+        console.log("Iam 16 years old")
+    }
+
+    getMyData(); // you can call a function like this
+    getMyData();
+
+
+    // Function Hoisting
+    getMyAges(); // you can and declare it later
+
+    function getMyAges() {
+        console.log(10, 20, 30, 40, 60)
+    }
 
 
 
@@ -375,7 +393,6 @@
     // console.log(ages[0]);
     // console.log(ages[1]);
     // console.log(ages[2]);
-
 
 
     // var customers=[];
@@ -448,8 +465,6 @@
     //otherwise return -1
 
 
-
-
     // Loops and Iteration in JS
 
     //For Loop
@@ -482,32 +497,24 @@
 
 
     // Let's get the values of an array using a for loop
-    var arrayOfAges=[10,20,55,65,34,90,100,35];
+    // var arrayOfAges=[10,20,55,65,34,90,100,35];
 
     // for(var i=0;i<arrayOfAges.length;i++){
     //     console.log(arrayOfAges[i]);
     // }
 
     //for of -> refer array values to the variable directly
-    for(var i of arrayOfAges){
-        console.log(i);
-    }
+    // for(var i of arrayOfAges){
+    //     console.log(i);
+    // }
 
-    console.log("+++++++++++++++");
+    // console.log("+++++++++++++++");
 
 
     // for in -> return index number of all the values
-    for(var i in arrayOfAges){
-        console.log(i,arrayOfAges[i]);
-    }
-
-
-
-
-
-
-
-
+    // for(var i in arrayOfAges){
+    //     console.log(i,arrayOfAges[i]);
+    // }
 
 
 </script>
