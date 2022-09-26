@@ -378,9 +378,9 @@
 
     // Array Related Methods, we can use these methods to manipulate array values
     //push(); // add values to the end of the array
-    //pop();
-    //shift();
-    //unshift();
+    //pop(); // remove the last indexed value of the array
+    //shift(); // remove the first indexed value of the array
+    //unshift();// add values to the first index of the array
     //slice();
     //splice();
     //reverse();
@@ -402,6 +402,24 @@
     customers.pop(); //F
     customers.pop(); //E
     console.log(customers);
+
+    // Shift (Remove the first indexed value of an array)
+    customers.shift();//A
+    customers.shift();//B
+    console.log(customers);
+
+    //Unshift (Add values to the first index of the array)
+    customers.unshift("B");
+    customers.unshift("A");
+    customers.unshift("Z");
+    console.log(customers);
+
+
+
+
+
+
+
 
 
 
