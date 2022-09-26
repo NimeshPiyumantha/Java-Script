@@ -307,38 +307,64 @@
 
 
     //How to create a named value container(Object) in JS
-    // Literal Base Object
-    // Function Base
+    // There are two ways to create an Object in JS
+    // -Literal Base Object
+    // -Function Base
 
     // Literal Base (ROW version of creating an object)
     //properties // methods
 
-    var customer = {
-        "id": "C001",  //key : value
-        "name": "Dasun",
-        "address": "Galle",
-        "salary": 19999,
-        "myStatus": true
-    }
+    // var customer = {
+    //     "id": "C001",  //key : value
+    //     "name": "Dasun",
+    //     "address": "Galle",
+    //     "salary": 19999,
+    //     "myStatus": true
+    // }
     //Object is a named value container
 
     //how to access values in an object
 
     // dot notation
-    customer.id; // C001
-    console.log(customer.id);
+    // customer.id; // C001
+    // console.log(customer.id);
 
     //bracket notation
-    customer['address'];
-    console.log(customer['address']);
+    // customer['address'];
+    // console.log(customer['address']);
 
 
 
     // Function - just a method
-    function getMyName(){
-        alert("My Name IS ABCD");
-    }
-    getMyName();
+    // function getMyName(){
+    //     alert("My Name IS ABCD");
+    // }
+    // getMyName();
+
+
+
+
+
+
+    // Arrays
+    //Arrays also can create in two ways
+    //-Literal Base Arrays
+    //-Function Base Arrays
+
+    //-Literal Base Arrays
+    var myNames=['Dasun','Galle','Kasun','Chamal'];
+
+    //how to get values.?
+    myNames[0];
+    myNames[1];
+    myNames[2];
+    myNames[3];
+
+
+    //function base Arrays
+    var ages= new Array(10,20,30,40,60);
+
+
 
 
 
