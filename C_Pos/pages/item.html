@@ -96,7 +96,7 @@
         let itemName = $("#itemName").val();
         let itemQty = $("#itemQty").val();
         let itemUnitPrice = $("#itemPrice").val();
-        clearTextFields();
+        clearITextFields();
 
         Swal.fire({
             position: 'top-end',
@@ -121,6 +121,28 @@
         loadAllItems();
 
     });
+
+    $("#btnIGetAll").click(function (){
+        loadAllItems();
+    });
+
+    //load all Items
+    function loadAllItems(){
+        //remove all the table body content before adding data
+        $("#tblItem").empty();
+
+
+        // get all item records from the array
+        for(var item of items){
+            console.log(item);// item object
+
+            // Using String Literals to do the same thing as above
+            var row= `<tr><td>${item.code}</td><td>${item.name}</td><td>${item.qty}</td><td>${item.price}</td></tr>`;
+
+            //then add it to the table body of customer table
+            $("#tblItem").append(row);
+        }
+    }
 
 
 
