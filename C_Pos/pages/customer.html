@@ -82,6 +82,7 @@
 
 
 <script src="../assets/js/jquery-3.6.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.33/dist/sweetalert2.all.min.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>
 <script>
     //select the save button and bind a click event for it
@@ -96,6 +97,15 @@
         let customerName = $("#txtCustomerName").val();
         let customerAddress = $("#txtCustomerAddress").val();
         let customerSalary = $("#txtCustomerSalary").val();
+        clearTextFields();
+
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Customer has been saved',
+            showConfirmButton: false,
+            timer: 2500
+        })
 
         // alert(customerID+" "+ customerName+" "+customerAddress+" "+customerSalary);
 
@@ -144,9 +154,6 @@
             $("#tblCustomer").append(row);
         }
     }
-
-
-
 
 </script>
 </body>
