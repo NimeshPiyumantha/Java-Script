@@ -144,7 +144,19 @@
         }
     }
 
+    $("#btn-clear").click(function (){
 
+        //remove all the table body content before adding data
+        /* $("#tblItem").remove();*/
+        clearITextFields();
+    });
+
+    function  clearITextFields(){
+        itemCode.value = '';
+        itemName.value = '';
+        itemQty.value = '';
+        itemPrice.value = '';
+    }
 
 </script>
 </body>
