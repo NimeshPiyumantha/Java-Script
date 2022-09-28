@@ -88,6 +88,40 @@
 
     var items=[]; // global scope (Store all the Items records)
 
+    $("#btnItem").click(function () {
+        //local scope // function scope
+
+        //select all the four text fields and then get their typed values
+        let itemCode = $("#itemCode").val();
+        let itemName = $("#itemName").val();
+        let itemQty = $("#itemQty").val();
+        let itemUnitPrice = $("#itemPrice").val();
+        clearTextFields();
+
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Item has been saved',
+            showConfirmButton: false,
+            timer: 2500
+        })
+
+        var itemObject = {
+            code: itemCode,
+            name: itemName,
+            qty: itemQty,
+            price: itemUnitPrice
+        }
+
+        //add the Item object to the array
+        items.push(itemObject);
+
+        console.log(items);
+
+        loadAllItems();
+
+    });
+
 
 
 </script>
