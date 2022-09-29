@@ -174,7 +174,19 @@
         txtCustomerSalary.value = '';
     }
 
+    //Search id Enter Pressed
+    $("#txtCustomerID").keyup(function(event) {
+        if (event.keyCode === 13) {
+            var result = customers.find(({id}) => id === $("#txtCustomerID").val());
+            console.log(result);
 
+            $("#txtCustomerID").val(result.id);
+            $("#txtCustomerName").val(result.name);
+            $("#txtCustomerAddress").val(result.address);
+            $("#txtCustomerSalary").val(result.salary);
+
+        }
+    });
 
 
 </script>
