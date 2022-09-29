@@ -188,7 +188,20 @@
         }
     });
 
+    //Table Listener Click and Load textFields
+    function tblClickEvents() {
+        $("#tblCustomer>tr").click(function () {
+            let id = $(this).children().eq(0).text();
+            let name = $(this).children().eq(1).text();
+            let address = $(this).children().eq(2).text();
+            let salary = $(this).children().eq(3).text();
 
+            $("#txtCustomerID").val(id);
+            $("#txtCustomerName").val(name);
+            $("#txtCustomerAddress").val(address);
+            $("#txtCustomerSalary").val(salary);
+        });
+    }
 </script>
 </body>
 </html>
