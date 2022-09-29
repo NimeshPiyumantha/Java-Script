@@ -176,6 +176,23 @@
         itemPrice.value = '';
     }
 
+
+    /**
+     * Search id Enter Pressed And Load TextFields
+     * */
+    $("#itemCode").keyup(function(event) {
+        if (event.keyCode === 13) {
+            var resultI = items.find(({code}) => code === $("#itemCode").val());
+            console.log(resultI);
+
+            $("#itemCode").val(resultI.code);
+            $("#itemName").val(resultI.name);
+            $("#itemQty").val(resultI.qty);
+            $("#itemPrice").val(resultI.price);
+
+        }
+    });
+
 </script>
 </body>
 </html>
