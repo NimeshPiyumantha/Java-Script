@@ -152,6 +152,7 @@
             //then add it to the table body of customer table
             $("#tblItem").append(row);
         }
+        tblIClickEvents();
     }
 
 
@@ -192,6 +193,23 @@
 
         }
     });
+
+    /**
+     * Table Listener Click and Load textFields
+     * */
+    function tblIClickEvents() {
+        $("#tblItem>tr").click(function () {
+            let code = $(this).children().eq(0).text();
+            let name = $(this).children().eq(1).text();
+            let qty = $(this).children().eq(2).text();
+            let price = $(this).children().eq(3).text();
+
+            $("#itemCode").val(code);
+            $("#itemName").val(name);
+            $("#itemQty").val(qty);
+            $("#itemPrice").val(price);
+        });
+    }
 
 </script>
 </body>
