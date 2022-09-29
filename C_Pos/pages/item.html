@@ -88,6 +88,9 @@
 
     var items=[]; // global scope (Store all the Items records)
 
+    /**
+     * Button Add New Item
+     * */
     $("#btnItem").click(function () {
         //local scope // function scope
 
@@ -122,11 +125,18 @@
 
     });
 
+
+    /**
+     * Button Get All Items
+     * */
     $("#btnIGetAll").click(function (){
         loadAllItems();
     });
 
-    //load all Items
+
+    /**
+     * load all Items Method
+     * */
     function loadAllItems(){
         //remove all the table body content before adding data
         $("#tblItem").empty();
@@ -144,6 +154,10 @@
         }
     }
 
+
+    /**
+     * clear input fields Values Button
+     * */
     $("#btn-clear").click(function (){
 
         //remove all the table body content before adding data
@@ -151,6 +165,10 @@
         clearITextFields();
     });
 
+
+    /**
+     * clear input fields Values Method
+     * */
     function  clearITextFields(){
         itemCode.value = '';
         itemName.value = '';
