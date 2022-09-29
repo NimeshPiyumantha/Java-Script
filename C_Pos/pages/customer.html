@@ -89,6 +89,9 @@
 
     var customers = []; // global scope (Store all the customer records)
 
+    /**
+     * Button Add New Customer
+     * */
     $("#btnCustomer").click(function () {
         //local scope // function scope
 
@@ -129,12 +132,17 @@
     });
 
 
+    /**
+     * Button Get All Customer
+     * */
     $("#btnGetAll").click(function () {
         loadAllCustomers();
     });
 
 
-    //load all customers
+    /**
+     * load all customers Method
+     * */
     function loadAllCustomers() {
 
         //remove all the table body content before adding data
@@ -158,7 +166,10 @@
 
     }
 
-    //clear Values Button
+
+    /**
+     * clear input fields Values Button
+     * */
     $("#btn-clear1").click(function () {
 
         //remove all the table body content before adding data
@@ -166,7 +177,10 @@
         clearTextFields();
     });
 
-    //clear Values in textFields
+
+    /**
+     * clear input fields Values Method
+     * */
     function clearTextFields() {
         txtCustomerID.value = '';
         txtCustomerName.value = '';
@@ -174,7 +188,10 @@
         txtCustomerSalary.value = '';
     }
 
-    //Search id Enter Pressed
+
+    /**
+     * Search id Enter Pressed And Load TextFields
+     * */
     $("#txtCustomerID").keyup(function(event) {
         if (event.keyCode === 13) {
             var result = customers.find(({id}) => id === $("#txtCustomerID").val());
@@ -188,7 +205,10 @@
         }
     });
 
-    //Table Listener Click and Load textFields
+
+    /**
+     * Table Listener Click and Load textFields
+     * */
     function tblClickEvents() {
         $("#tblCustomer>tr").click(function () {
             let id = $(this).children().eq(0).text();
@@ -202,6 +222,7 @@
             $("#txtCustomerSalary").val(salary);
         });
     }
+
 </script>
 </body>
 </html>
