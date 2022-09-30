@@ -7,8 +7,56 @@
 <body>
 <h1>Hello JS</h1>
 <h1>Let's see how jQuery support for our events in JS</h1>
-<input type="text" placeholder="Input Something">
-<button>Test</button>
+<input placeholder="Input Something" type="text">
+<button id="btnTest">Test</button>
+
+
+<script src="assets/js/jquery-3.6.1.min.js"></script>
+<script>
+    // jQuery formalized way of binding events to elements
+    $("#btnTest").click(function () {
+        console.log("Btn Clicked")
+    });
+
+    // This is how that jQuery gave us to write down an event
+    $("#btnTest").on('click', function () {
+        console.log("Helloooooooo");
+    });
+
+
+    // so we can also detach events after binding
+    $("#btnTest").off('click');
+
+
+    //So what are the formalized events that we have in jQuery
+    //click();
+    //dblclick();
+    //focus();
+    //blur();
+    //keydown();
+    //keyup();
+    //keypress();
+    //mousedown();
+    //mouseup();
+    //mousemove();
+
+    //standard way
+    $("#btnTest").on('dblclick',function(){
+        alert('btn double clicked');
+    });
+
+    //Normalized way
+    $("#btnTest").dblclick(function(){
+        alert('btn double clicked 2nd');
+    });
+
+
+
+
+
+
+
+</script>
 
 </body>
 </html>
