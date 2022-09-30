@@ -211,6 +211,13 @@
         });
     }
 
+    /**
+     * Table Listener double click and Click and Remove textFields
+     * */
+    $( "#tblItem" ).dblclick(function() {
+        $(this).children('tr').eq(0).remove();
+    });
+
 </script>
 </body>
 </html>
