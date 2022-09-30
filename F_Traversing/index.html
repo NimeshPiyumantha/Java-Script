@@ -5,6 +5,7 @@
     <title>Traversing With JS</title>
 </head>
 <body>
+
 <h1>Traversing With JS</h1>
 <ul>
     <li>A</li>
@@ -15,9 +16,32 @@
 <section>
     <section>
         <div>
-
+            <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+            </ul>
+            <h1>Hello there</h1>
+            <h2>Hello there</h2>
         </div>
-        <div>
+        <div class="dClass">
+            <div>
+                <section>
+                    <div>
+                        <ol>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                        </ol>
+                        <ul>
+                            <li>GDSE</li>
+                            <li>CMJD</li>
+                            <li>IJSE</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
             <h1 id="d">Hello there How you.!</h1>
         </div>
     </section>
@@ -25,16 +49,99 @@
 
 
 <script src="assets/js/jquery-3.6.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.33/dist/sweetalert2.all.min.js"></script>
 <script>
 
-    $("#d").click(function (){
-        Swal.fire(
-            'Hi',
-            'That thing is still around?',
-            'question'
-        )
-    });
+    /*Methods that we can use for traversing*/
+    /*
+    * children();
+    * parent();
+    * parents();
+    * find();
+    * get();
+    * eq();
+    * children(":nth-child(1)")
+    * children(":eq(1)")
+    * */
+
+
+    //children
+    // $('body').children();
+    //return all the root children of selected element
+
+    // $('html').children(); // return a jQuery Object with list of children
+
+    //then how to select one of the child
+    // $('body').children('ul'); // select one from children // return a jQuery Object
+
+
+    //What type of arguments that we can put inside children method
+    // $('body').children(':nth-child(1)'); // select the first child from the children list of body // return a jQuery Object
+
+
+    //What are the other method that we can use
+    // $('body').children(':eq(0)'); // we have to give the index number of element to select one element from the
+    //children list of body // return a jQuery Object
+
+    //Get method
+    // $('body').children().get(0); // by calling get method we can get a DOM
+    //element (returns DOM element not a jQuery object)
+
+    // so if we try to do something like below. it will be an error
+    // $('body').children().get(1).text(); //error
+    // we cannot access jQuery methods from a DOM object
+
+    //So how to resolve the above problem
+    // 01.
+    // $('body').children(':nth-child(1)').text();
+
+    // 02.
+    // $('body').children(':eq(0)').text();
+
+    // 03.
+    // $('body').children().eq('0').text();
+
+
+    //Recursively calling traversing methods
+
+    // $('body').children();
+    // S.fn.init(6) [h1, ul, section, script, script, script, prevObject: S.fn.init(1)]
+
+    // $('body').children(':eq(1)');
+    // S.fn.init [ul, prevObject: S.fn.init(1)]
+
+    // $('body').children(':eq(1)').children();
+    // S.fn.init(3) [li, li, li, prevObject: S.fn.init(1)]
+
+    // $('body').children(':eq(1)').children(':nth-child(2)');
+    // S.fn.init [li, prevObject: S.fn.init(1)]
+
+    // $('body').children(':eq(1)').children(':nth-child(2)').text();
+
+
+    // Parents (can get the entire parent hierarchy of a selected element)
+    // $("#d").parents(); //return whole parent hierarchy of #d element
+
+    // Parent (can get the nearest parent of a selected element)
+    // $("#d").parent(); // return the nearest parent of #d element
+
+    // So can we select one element from this
+    // $('#d').parents('div');
+    // $('#d').parents(':eq(0)');
+    // $('#d').parents(':eq(1)');
+    // $('#d').parents().eq(0);
+
+
+    //Using all of them for selecting an elements
+    // $('#d').parents('section').eq(0).children(":eq(0)").children('h1').css('color','red');
+
+    // Change color of CMJD list by using traversing
+    // $('#d').parent().children('div').children().children().children('ul').children(":nth-child(2)").css('color','red');
+
+
+    // Find. ?
+    // can find children of a parent
+    $('body').find('ul').remove(); // remove all the ul inside the body
+
 </script>
 </body>
 </html>
