@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Events</title>
+</head>
+<body>
+
+<h1 onmouseenter="testMouseMove()">JS Events</h1>
+<h2>There are two types of events</h2>
+<ul>
+    <li>Global Events</li>
+    <li id="se">Specified Events</li>
+</ul>
+
+<button onclick="alert('hello, I am a global event')">Test</button>
+<button onclick="testGlobalEvents()">Test</button>
+
+
+<script>
+    //Global events
+    function testGlobalEvents() {
+        console.log("Hello there..!")
+    }
+
+    function testMouseMove() {
+        alert('mouse entered on h1');
+    }
+
+
+    //Specified Events
+    let li = document.getElementById("se");
+    li.addEventListener('click', function () {
+        alert('Hello, I am a specified event');
+    });
+
+
+</script>
+
+</body>
+</html>
