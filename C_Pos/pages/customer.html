@@ -35,22 +35,22 @@
 
             <div class="form-group">
                 <label for="txtCustomerID">Customer ID</label>
-                <input class="form-control" id="txtCustomerID" data-index="1" required type="text">
+                <input class="form-control" id="txtCustomerID" required type="text">
                 <span class="control-error" id="lblcusid"></span>
             </div>
             <div class="form-group">
                 <label for="txtCustomerName">Customer Name</label>
-                <input class="form-control" id="txtCustomerName" data-index="2" type="text">
+                <input class="form-control" id="txtCustomerName" type="text">
                 <span class="control-error" id="lblcusname"></span>
             </div>
             <div class="form-group">
                 <label for="txtCustomerAddress">Customer Address</label>
-                <input class="form-control" id="txtCustomerAddress" data-index="3" type="text">
+                <input class="form-control" id="txtCustomerAddress" type="text">
                 <span class="control-error" id="lblcusaddress"></span>
             </div>
             <div class="form-group">
                 <label for="txtCustomerSalary">Customer Salary</label>
-                <input class="form-control" id="txtCustomerSalary" data-index="4" type="text">
+                <input class="form-control" id="txtCustomerSalary" type="text">
                 <span class="control-error" id="lblcussalary"></span>
             </div>
             <div class="btn-group">
@@ -135,19 +135,34 @@
     /**
      * Auto Forces Input Fields
      * */
-    $(document).ready(function() {
-        $('.form-control').keypress(function(event){
-            if(event.which === 13) {
-                event.preventDefault();
-                var $this = $(event.target);
-                var index = parseFloat($this.attr('data-index'));
-                $('[data-index="' + (index + 1).toString() + '"]').focus();
+    $(document).ready(function () {
+        $('#txtCustomerID').keypress(function (event) {
+            if (event.which === 13) {
+                $('#txtCustomerName').focus();
+            }
+        });
+        $('#txtCustomerName').keypress(function (event) {
+            if (event.which === 13) {
+                $('#txtCustomerAddress').focus();
+            }
+        });
+        $('#txtCustomerAddress').keypress(function (event) {
+            if (event.which === 13) {
+                $('#txtCustomerSalary').focus();
+            }
+        });
+        $('#txtCustomerSalary').keypress(function (event) {
+            if (event.which === 13) {
+                $('#btnCustomer').focus();
+            }
+        });
+        $('#btnCustomer').keypress(function (event) {
+            if (event.which === 13) {
+                $('#txtCustomerID').focus();
             }
         });
 
     });
-
-
 
 
     /**
@@ -206,22 +221,21 @@
     }
 
 
-    /**
-     * Search id Enter Pressed And Load TextFields
-     * */
-    $("#txtCustomerID").keyup(function(event) {
-        if (event.keyCode === 13) {
-            var result = customers.find(({id}) => id === $("#txtCustomerID").val());
-            console.log(result);
+     /**
+      * Search id Enter Pressed And Load TextFields
+      * */
+     $("#txtCustomerID").keyup(function (event) {
+         if (event.keyCode === 13) {
+             var result = customers.find(({id}) => id === $("#txtCustomerID").val());
+             console.log(result);
 
-            $("#txtCustomerID").val(result.id);
-            $("#txtCustomerName").val(result.name);
-            $("#txtCustomerAddress").val(result.address);
-            $("#txtCustomerSalary").val(result.salary);
+             $("#txtCustomerID").val(result.id);
+             $("#txtCustomerName").val(result.name);
+             $("#txtCustomerAddress").val(result.address);
+             $("#txtCustomerSalary").val(result.salary);
 
-        }
-    });
-
+         }
+     });
 
     //Set back values from table to text fields
     // $('tr'); // select all the rows
@@ -268,7 +282,7 @@
     /**
      * Table Listener double click and Click and Remove textFields
      * */
-    $( "#tblCustomer" ).dblclick(function() {
+    $("#tblCustomer").dblclick(function () {
         Swal.fire({
             title: 'Do you want to Delete the Select row?',
             showDenyButton: true,
@@ -291,8 +305,6 @@
         })
 
     });
-
-
 </script>
 </body>
 </html>
