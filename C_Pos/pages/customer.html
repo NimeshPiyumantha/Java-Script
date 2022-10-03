@@ -199,17 +199,20 @@
             if (event.which === 13) {
                 $("#txtCustomerSalary").focus();
             }
+
+            $('#txtCustomerSalary').keypress(function (event) {
+                if (event.which === 13) {
+                    $('#btnCustomer').focus();
+                }
+            });
+
         } else {
             $("#txtCustomerSalary").css('border', '2px solid red');
             $("#lblcussalary").text("Wrong format : 70000");
         }
     });
 
-    $('#txtCustomerSalary').keypress(function (event) {
-        if (event.which === 13) {
-            $('#btnCustomer').focus();
-        }
-    });
+
 
     $('#btnCustomer').keypress(function (event) {
         if (event.which === 13) {

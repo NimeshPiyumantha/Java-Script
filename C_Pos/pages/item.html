@@ -128,34 +128,90 @@
     /**
      * Auto Forces Input Fields
      * */
-    $(document).ready(function () {
-        $('#itemCode').keypress(function (event) {
-            if (event.which === 13) {
-                $('#itemName').focus();
-            }
-        });
-        $('#itemName').keypress(function (event) {
-            if (event.which === 13) {
-                $('#itemQty').focus();
-            }
-        });
-        $('#itemQty').keypress(function (event) {
-            if (event.which === 13) {
-                $('#itemPrice').focus();
-            }
-        });
-        $('#itemPrice').keypress(function (event) {
-            if (event.which === 13) {
-                $('#btnItem').focus();
-            }
-        });
-        $('#btnItem').keypress(function (event) {
-            if (event.which === 13) {
-                $('#itemCode').focus();
-            }
-        });
 
+    var regExItemCode = /^(I00-)[0-9]{3,4}$/;
+    var regExItemName = /^[A-z ]{3,20}$/;
+    var regExItemPrice = /^[0-9]{1,10}$/;
+    var regExItemQtyOnHand = /^[0-9]{1,3}$/;
+
+
+    $('#itemCode').keypress(function (event) {
+        let input = $("#itemCode").val();
+
+        if (regExItemCode.test(input)) {
+            $("#itemCode").css('border', '2px solid green');
+            $("#lblCode").text("");
+
+            if (event.which === 13) {
+                $("#itemName").focus();
+            }
+        } else {
+            $("#itemCode").css('border', '2px solid red');
+            $("#lblCode").text("Wrong format : I00-001");
+        }
     });
+
+    $('#itemName').keypress(function (event) {
+        let input = $("#itemName").val();
+
+        if (regExItemName.test(input)) {
+            $("#itemName").css('border', '2px solid green');
+            $("#lblname").text("");
+
+            if (event.which === 13) {
+                $("#itemQty").focus();
+            }
+        } else {
+            $("#itemName").css('border', '2px solid red');
+            $("#lblname").text("Wrong format : Bun");
+        }
+    });
+
+    $('#itemQty').keypress(function (event) {
+        let input = $("#itemQty").val();
+
+        if (regExItemQtyOnHand.test(input)) {
+            $("#itemQty").css('border', '2px solid green');
+            $("#lblqty").text("");
+
+            if (event.which === 13) {
+                $("#itemPrice").focus();
+            }
+        } else {
+            $("#itemQty").css('border', '2px solid red');
+            $("#lblqty").text("Wrong format : 5");
+        }
+    });
+
+    $('#itemPrice').keypress(function (event) {
+        let input = $("#itemPrice").val();
+
+        if (regExItemPrice.test(input)) {
+            $("#itemPrice").css('border', '2px solid green');
+            $("#lblprice").text("");
+
+            if (event.which === 13) {
+                $("#btnItem").focus();
+            }
+
+            $('#itemPrice').keypress(function (event) {
+                if (event.which === 13) {
+                    $('#btnItem').focus();
+                }
+            });
+
+        } else {
+            $("#itemPrice").css('border', '2px solid red');
+            $("#lblprice").text("Wrong format : 450");
+        }
+    });
+
+    $('#btnItem').keypress(function (event) {
+        if (event.which === 13) {
+            $('#itemCode').focus();
+        }
+    });
+
 
 
     /**
