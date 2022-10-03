@@ -135,33 +135,86 @@
     /**
      * Auto Forces Input Fields
      * */
-    $(document).ready(function () {
-        $('#txtCustomerID').keypress(function (event) {
-            if (event.which === 13) {
-                $('#txtCustomerName').focus();
-            }
-        });
-        $('#txtCustomerName').keypress(function (event) {
-            if (event.which === 13) {
-                $('#txtCustomerAddress').focus();
-            }
-        });
-        $('#txtCustomerAddress').keypress(function (event) {
-            if (event.which === 13) {
-                $('#txtCustomerSalary').focus();
-            }
-        });
-        $('#txtCustomerSalary').keypress(function (event) {
-            if (event.which === 13) {
-                $('#btnCustomer').focus();
-            }
-        });
-        $('#btnCustomer').keypress(function (event) {
-            if (event.which === 13) {
-                $('#txtCustomerID').focus();
-            }
-        });
+    var regExCusID = /^(C00-)[0-9]{3,4}$/;
+    var regExCusName = /^[A-z ]{3,20}$/;
+    var regExCusAddress = /^[A-z0-9/ ]{4,30}$/;
+    var regExSalary = /[0-9]{4,19}$/;
 
+
+    $('#txtCustomerID').keypress(function (event) {
+        let input = $("#txtCustomerID").val();
+
+        if (regExCusID.test(input)) {
+            $("#txtCustomerID").css('border', '2px solid green');
+            $("#lblcusid").text("");
+
+            if (event.which === 13) {
+                $("#txtCustomerName").focus();
+            }
+        } else {
+            $("#txtCustomerID").css('border', '2px solid red');
+            $("#lblcusid").text("Wrong format : C00-001");
+        }
+    });
+
+    $('#txtCustomerName').keypress(function (event) {
+        let input = $("#txtCustomerName").val();
+
+        if (regExCusName.test(input)) {
+            $("#txtCustomerName").css('border', '2px solid green');
+            $("#lblcusname").text("");
+
+            if (event.which === 13) {
+                $("#txtCustomerAddress").focus();
+            }
+        } else {
+            $("#txtCustomerName").css('border', '2px solid red');
+            $("#lblcusname").text("Wrong format : Nimesh");
+        }
+    });
+
+    $('#txtCustomerAddress').keypress(function (event) {
+        let input = $("#txtCustomerAddress").val();
+
+        if (regExCusAddress.test(input)) {
+            $("#txtCustomerAddress").css('border', '2px solid green');
+            $("#lblcusaddress").text("");
+
+            if (event.which === 13) {
+                $("#txtCustomerSalary").focus();
+            }
+        } else {
+            $("#txtCustomerAddress").css('border', '2px solid red');
+            $("#lblcusaddress").text("Wrong format : Galle");
+        }
+    });
+
+    $('#txtCustomerSalary').keypress(function (event) {
+        let input = $("#txtCustomerSalary").val();
+
+        if (regExSalary.test(input)) {
+            $("#txtCustomerSalary").css('border', '2px solid green');
+            $("#lblcussalary").text("");
+
+            if (event.which === 13) {
+                $("#txtCustomerSalary").focus();
+            }
+        } else {
+            $("#txtCustomerSalary").css('border', '2px solid red');
+            $("#lblcussalary").text("Wrong format : 70000");
+        }
+    });
+
+    $('#txtCustomerSalary').keypress(function (event) {
+        if (event.which === 13) {
+            $('#btnCustomer').focus();
+        }
+    });
+
+    $('#btnCustomer').keypress(function (event) {
+        if (event.which === 13) {
+            $('#txtCustomerID').focus();
+        }
     });
 
 
@@ -298,6 +351,7 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 $(this).children('tr').eq(0).remove();
+                clearTextFields();
                 Swal.fire('Delete!', '', 'success')
             } else if (result.isDenied) {
                 Swal.fire('Select row are not Delete', '', 'info')
@@ -305,6 +359,9 @@
         })
 
     });
+
+
+
 </script>
 </body>
 </html>
