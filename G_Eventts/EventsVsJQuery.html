@@ -41,19 +41,22 @@
     //mousemove();
 
     //standard way
-    $("#btnTest").on('dblclick',function(){
+    $("#btnTest").on('dblclick', function () {
         alert('btn double clicked');
     });
 
     //Normalized way
-    $("#btnTest").dblclick(function(){
+    $("#btnTest").dblclick(function () {
         alert('btn double clicked 2nd');
     });
 
+    $('input').focus(function () {
+        console.log("input Focused");
+    });
 
-
-
-
+    $('button').focus(function () {
+        console.log("Btn Focused");
+    });
 
 
 </script>
