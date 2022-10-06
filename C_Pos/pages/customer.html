@@ -82,16 +82,12 @@
 
 
 <script src="../assets/js/jquery-3.6.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.33/dist/sweetalert2.all.min.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>
 <script>
     //select the save button and bind a click event for it
 
     var customers = []; // global scope (Store all the customer records)
 
-    /**
-     * Button Add New Customer
-     * */
     $("#btnCustomer").click(function () {
         //local scope // function scope
 
@@ -100,15 +96,6 @@
         let customerName = $("#txtCustomerName").val();
         let customerAddress = $("#txtCustomerAddress").val();
         let customerSalary = $("#txtCustomerSalary").val();
-        clearTextFields();
-
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Customer has been saved',
-            showConfirmButton: false,
-            timer: 2500
-        })
 
         // alert(customerID+" "+ customerName+" "+customerAddress+" "+customerSalary);
 
@@ -125,122 +112,30 @@
         //add the customer object to the array
         customers.push(customerObject);
 
-        console.log(customers);
+
+        // console.log(customers);
 
         loadAllCustomers();
 
+        bindRowClickEvents();
+
     });
 
 
-    /**
-     * Auto Forces Input Fields
-     * */
-    var regExCusID = /^(C00-)[0-9]{3,4}$/;
-    var regExCusName = /^[A-z ]{3,20}$/;
-    var regExCusAddress = /^[A-z0-9/ ]{4,30}$/;
-    var regExSalary = /[0-9]{4,19}$/;
-
-
-    $('#txtCustomerID').keypress(function (event) {
-        let input = $("#txtCustomerID").val();
-
-        if (regExCusID.test(input)) {
-            $("#txtCustomerID").css('border', '2px solid green');
-            $("#lblcusid").text("");
-
-            if (event.which === 13) {
-                $("#txtCustomerName").focus();
-            }
-        } else {
-            $("#txtCustomerID").css('border', '2px solid red');
-            $("#lblcusid").text("Wrong format : C00-001");
-        }
-    });
-
-    $('#txtCustomerName').keypress(function (event) {
-        let input = $("#txtCustomerName").val();
-
-        if (regExCusName.test(input)) {
-            $("#txtCustomerName").css('border', '2px solid green');
-            $("#lblcusname").text("");
-
-            if (event.which === 13) {
-                $("#txtCustomerAddress").focus();
-            }
-        } else {
-            $("#txtCustomerName").css('border', '2px solid red');
-            $("#lblcusname").text("Wrong format : Nimesh");
-        }
-    });
-
-    $('#txtCustomerAddress').keypress(function (event) {
-        let input = $("#txtCustomerAddress").val();
-
-        if (regExCusAddress.test(input)) {
-            $("#txtCustomerAddress").css('border', '2px solid green');
-            $("#lblcusaddress").text("");
-
-            if (event.which === 13) {
-                $("#txtCustomerSalary").focus();
-            }
-        } else {
-            $("#txtCustomerAddress").css('border', '2px solid red');
-            $("#lblcusaddress").text("Wrong format : Galle");
-        }
-    });
-
-    $('#txtCustomerSalary').keypress(function (event) {
-        let input = $("#txtCustomerSalary").val();
-
-        if (regExSalary.test(input)) {
-            $("#txtCustomerSalary").css('border', '2px solid green');
-            $("#lblcussalary").text("");
-
-            if (event.which === 13) {
-                $("#txtCustomerSalary").focus();
-            }
-
-            $('#txtCustomerSalary').keypress(function (event) {
-                if (event.which === 13) {
-                    $('#btnCustomer').focus();
-                }
-            });
-
-        } else {
-            $("#txtCustomerSalary").css('border', '2px solid red');
-            $("#lblcussalary").text("Wrong format : 70000");
-        }
-    });
-
-
-
-    $('#btnCustomer').keypress(function (event) {
-        if (event.which === 13) {
-            $('#txtCustomerID').focus();
-        }
-    });
-
-
-    /**
-     * Button Get All Customer
-     * */
     $("#btnGetAll").click(function () {
         loadAllCustomers();
     });
 
 
-    /**
-     * load all customers Method
-     * */
+    //load all customers
     function loadAllCustomers() {
-
         //remove all the table body content before adding data
         $("#tblCustomer").empty();
 
 
         // get all customer records from the array
         for (var customer of customers) {
-            console.log(customer);// customer object
+            // console.log(customer);// customer object
 
             // add those data to the table row
             // var row= "<tr><td>"+customer.id+"</td><td>"+customer.name+"</td><td>"+customer.address+"</td><td>"+customer.salary+"</td></tr>";
@@ -251,47 +146,8 @@
             //then add it to the table body of customer table
             $("#tblCustomer").append(row);
         }
-        tblClickEvents();
     }
 
-
-    /**
-     * clear input fields Values Button
-     * */
-    $("#btn-clear1").click(function () {
-
-        //remove all the table body content before adding data
-        /* $("#tblCustomer").remove();*/
-        clearTextFields();
-    });
-
-
-    /**
-     * clear input fields Values Method
-     * */
-    function clearTextFields() {
-        txtCustomerID.value = '';
-        txtCustomerName.value = '';
-        txtCustomerAddress.value = '';
-        txtCustomerSalary.value = '';
-    }
-
-
-     /**
-      * Search id Enter Pressed And Load TextFields
-      * */
-     $("#txtCustomerID").keyup(function (event) {
-         if (event.keyCode === 13) {
-             var result = customers.find(({id}) => id === $("#txtCustomerID").val());
-             console.log(result);
-
-             $("#txtCustomerID").val(result.id);
-             $("#txtCustomerName").val(result.name);
-             $("#txtCustomerAddress").val(result.address);
-             $("#txtCustomerSalary").val(result.salary);
-
-         }
-     });
 
     //Set back values from table to text fields
     // $('tr'); // select all the rows
@@ -318,52 +174,22 @@
     // So we don't want entire row text we want only segregated data
 
 
-    /**
-     * Table Listener Click and Load textFields
-     * */
-    function tblClickEvents() {
+    function bindRowClickEvents() {
         $("#tblCustomer>tr").click(function () {
-            let id = $(this).children().eq(0).text();
-            let name = $(this).children().eq(1).text();
-            let address = $(this).children().eq(2).text();
-            let salary = $(this).children().eq(3).text();
+            let id = $(this).children(":eq(0)").text();
+            let name = $(this).children(":eq(1)").text();
+            let address = $(this).children(":eq(2)").text();
+            let salary = $(this).children(":eq(3)").text();
+            // console.log(id, name, address, salary);
 
-            $("#txtCustomerID").val(id);
-            $("#txtCustomerName").val(name);
-            $("#txtCustomerAddress").val(address);
-            $("#txtCustomerSalary").val(salary);
+            //setting table details values to text fields
+            $('#txtCustomerID').val(id);
+            $('#txtCustomerName').val(name);
+            $('#txtCustomerAddress').val(address);
+            $('#txtCustomerSalary').val(salary);
+
         });
     }
-
-    /**
-     * Table Listener double click and Click and Remove textFields
-     * */
-    $("#tblCustomer").dblclick(function () {
-        Swal.fire({
-            title: 'Do you want to Delete the Select row?',
-            showDenyButton: true,
-            showCancelButton: true,
-            confirmButtonText: 'Yes',
-            denyButtonText: 'No',
-            customClass: {
-                actions: 'my-actions',
-                cancelButton: 'order-1 right-gap',
-                confirmButton: 'order-2',
-                denyButton: 'order-3',
-            }
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $(this).children('tr').eq(0).remove();
-                clearTextFields();
-                Swal.fire('Delete!', '', 'success')
-            } else if (result.isDenied) {
-                Swal.fire('Select row are not Delete', '', 'info')
-            }
-        })
-
-    });
-
-
 
 </script>
 </body>

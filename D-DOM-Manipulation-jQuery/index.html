@@ -90,10 +90,10 @@
     //02. then select the input field and then get the typed text
     //03. select the image and then set the typed value for the src attribute
 
-    /*   document.querySelector("button").addEventListener('click', function () {
-           // document.querySelector('input').value;// get the typed value
-           document.querySelector("#mainImage").setAttribute("src", document.querySelector('input').value);
-       });*/
+ /*   document.querySelector("button").addEventListener('click', function () {
+        // document.querySelector('input').value;// get the typed value
+        document.querySelector("#mainImage").setAttribute("src", document.querySelector('input').value);
+    });*/
 
     $('button').click(function(){
         $("#mainImage").attr('src',$('input').val());
@@ -141,11 +141,11 @@
     });
 
 
-    /*  document.getElementById("btnTwo").addEventListener("click",function(){
-          document.getElementById("imgOne").style.visibility='visible';
-          document.getElementById("imgTwo").style.visibility='hidden';
-          document.getElementById("imgThree").style.visibility='visible';
-      });*/
+  /*  document.getElementById("btnTwo").addEventListener("click",function(){
+        document.getElementById("imgOne").style.visibility='visible';
+        document.getElementById("imgTwo").style.visibility='hidden';
+        document.getElementById("imgThree").style.visibility='visible';
+    });*/
 
     $("#btnTwo").click(function(){
         $("#imgOne").css('visibility','visible');

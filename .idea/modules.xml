@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/A_Basics/A_Basics.iml" filepath="$PROJECT_DIR$/A_Basics/A_Basics.iml" />
-      <module fileurl="file://$PROJECT_DIR$/B_DOM-Manipulation/B_DOM-Manipulation.iml" filepath="$PROJECT_DIR$/B_DOM-Manipulation/B_DOM-Manipulation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/B_DOM-Manipulation/C-Pos.iml" filepath="$PROJECT_DIR$/B_DOM-Manipulation/C-Pos.iml" />
-      <module fileurl="file://$PROJECT_DIR$/C_Pos/C_Pos.iml" filepath="$PROJECT_DIR$/C_Pos/C_Pos.iml" />
-      <module fileurl="file://$PROJECT_DIR$/D-DOM-Manipulation-jQuery/D-DOM-Manipulation-jQuery.iml" filepath="$PROJECT_DIR$/D-DOM-Manipulation-jQuery/D-DOM-Manipulation-jQuery.iml" />
-      <module fileurl="file://$PROJECT_DIR$/G_Eventts/E_POS-SPA.iml" filepath="$PROJECT_DIR$/G_Eventts/E_POS-SPA.iml" />
-      <module fileurl="file://$PROJECT_DIR$/F_Traversing/F_Traversing.iml" filepath="$PROJECT_DIR$/F_Traversing/F_Traversing.iml" />
-      <module fileurl="file://$PROJECT_DIR$/G_Eventts/G_Eventts.iml" filepath="$PROJECT_DIR$/G_Eventts/G_Eventts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A_Basics.iml" filepath="$PROJECT_DIR$/A_Basics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/B_DOM-Manipulation.iml" filepath="$PROJECT_DIR$/B_DOM-Manipulation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/C_POS.iml" filepath="$PROJECT_DIR$/C_POS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/D-DOM-Manipulation-jQuery.iml" filepath="$PROJECT_DIR$/D-DOM-Manipulation-jQuery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/E_POS-SPA.iml" filepath="$PROJECT_DIR$/E_POS-SPA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/F_Traversing.iml" filepath="$PROJECT_DIR$/F_Traversing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/G_Events.iml" filepath="$PROJECT_DIR$/G_Events.iml" />
+      <module fileurl="file://$PROJECT_DIR$/H_DocumentVsWindow.iml" filepath="$PROJECT_DIR$/H_DocumentVsWindow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/I_Validation.iml" filepath="$PROJECT_DIR$/I_Validation.iml" />
     </modules>
   </component>
 </project>
