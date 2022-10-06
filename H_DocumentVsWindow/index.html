@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Ready vs Window On Load</title>
+    <style>
+        h1{
+            font-size: 100px;
+            color: white;
+            text-align: center;
+            background: red;
+        }
+
+        body>div{
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: white;
+        }
+
+        div>div{
+            width: 500px;
+            height: 200px;
+            border: 2px solid white;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background: url("assets/img/loader.gif");
+            background-size: cover;
+            background-position: center;
+
+        }
+    </style>
+</head>
+<body>
+
+<div id="loader">
+    <div>
+    </div>
+</div>
+
+<h1>Document Ready vs Window On Load events</h1>
+
+<iframe src="http://ijse.lk" frameborder="0" width="100%" height="600px"></iframe>
+
+
+
+<script src="assets/js/jquery-3.6.1.min.js"></script>
+<script>
+
+    // //alternative for above function
+    // $(function () {
+    //     console.log("This is also demonstrate that document is ready")
+    // });
+
+    // execute after all the content fully loaded
+    $(window).on('load', function () {
+        console.log("Window on load");
+
+        // $("#loader").css('display','none');
+        $("#loader").fadeOut(1000);
+    });
+
+
+    // run after just creating the dom
+    $(document).ready(function () {
+        console.log("Document is ready");
+    });
+
+    // $(function (){
+    //     console.log("Document is ready");
+    // });
+
+</script>
+</body>
+</html>

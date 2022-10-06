@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+*{
+    font-family: 'Titillium Web', sans-serif;
+}
+#title-text{
+    color: #1b5e20;
+    font-size: 2em;
+}
+#title-text:hover{
+    color: #00695c;
+}
+
+#nav-bar-main{
+    z-index: 1;
+    background-color: rgba(255,255,255,0.8);
+    border-bottom: rgba(0,0,0,0.7) solid 3px;
+    box-shadow: black 0 0 10px;
+}
+.card-header{
+    color: white !important;
+}
+.dash-tile-icon{
+    font-size: 4.5em;
+}
+/**/
+section.mainTitle label:first-child{
+    font-size: 25px;
+    font-weight: bolder;
+    margin-right: 5px;
+}
+section.mainTitle label:last-child{
+    color: #78909c;
+}
+.front-nav-bar{
+    background-color: #eceff1;
+    font-size: 0.7em;
+    color: #546e7a;
+    padding: 7px;
+    border-top: #cfd8dc solid 1px;
+    border-bottom: #cfd8dc solid 1px;
+}
+div.form-group label{
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.content-box-2{
+    background-color: #ffffff;
+    padding: 40px;
+}
+#total-text{
+    color: #3d98ef;
+    font-size: 13px;
+}
+#total-text1{
+    color: #ef5350;
+    font-size: 13px;
+}
+section.content-box-2 label{
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+
+div.form-group label{
+    margin: 0;
+}
+
+.control-error {
+    color: red;
+    font-size: 0.9em;
+    /*display: none;*/
+}
+
+#total{
+    font-size: 30px;
+    color: #3d98ef;
+}
+#subtotal{
+    color: #ef5350;
+    font-size: 30px;
+}
